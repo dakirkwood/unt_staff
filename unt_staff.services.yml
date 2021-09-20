@@ -1,0 +1,5 @@
+services:
+  unt_staff_client:
+    class: Drupal\unt_staff\UntStaffClient
+    arguments:
+      - '@http_client_factory'

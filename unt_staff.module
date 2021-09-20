@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Contains unt_events.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function unt_staff_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the unt_events module.
+    case 'help.page.unt_staff':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Pulls information from the campus staff site') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function unt_staff_theme($existing, $type, $theme, $path) {
+  return [
+    'unt_staff_block' => [
+      'variables' => [
+        'content' => NULL,
+        'first_name' => NULL,
+        'last_name' => NULL,
+        'job_title' => NULL,
+        'department' => NULL,
+        'email' => NULL,
+        'phone' => NULL,
+        'building' => NULL,
+        'office' => NULL,
+        'image' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+    'unt_staff_profile' => [
+      'variables' => [
+        'first_name' => NULL,
+        'last_name' => NULL,
+        'job_title' => NULL,
+        'department' => NULL,
+        'email' => NULL,
+        'phone' => NULL,
+        'building' => NULL,
+        'office' => NULL,
+        'image' => NULL,
+      ],
+      'render element' => 'children',
+    ]
+  ];
+}

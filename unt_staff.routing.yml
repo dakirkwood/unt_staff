@@ -1,0 +1,7 @@
+unt_staff.campus_staff_controller_showProfile:
+  path: /staff/{staffId}
+  defaults:
+    _controller: \Drupal\unt_staff\Controller\CampusStaffController::showProfile
+
+  requirements:
+    _permission: 'access content'

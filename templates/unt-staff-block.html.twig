@@ -1,0 +1,22 @@
+{%  for staff in content %}
+
+<div class="listing staff">
+
+  {% if staff['staffPortrait'] %}
+  <img src="{{ staff['staffPortrait'] }}" alt="{{ staff['staffFirst'] }} {{ staff['staffLast'] }} at UNT" />
+  {% endif %}
+
+  <div class="staff-info">
+    <h3 class="staff-name"><a href="/staff/{{ staff['staffId'] }}">{{ staff['staffFirst'] }} {{ staff['staffLast'] }}</a></h3>
+    <p>
+      <span class="staff-dept">{{ staff['staffDept'] }}</span><br />
+      <span class="staff-title">{{ staff['staffTitle'] }}</span><br />
+      <span class="staff-phone">{{ staff['staffPhone'] }}</span>,
+      <span class="staff-email"><a href="mailto:{{ staff['staffEmail'] }}">{{ staff['staffEmail'] }}</a></span><br />
+      <span class="staff-office">{{ staff['staffBuilding'] }}, {{ staff['staffOffice'] }}</span>
+    </p>
+  </div>
+</div>
+
+{% endfor %}
+
